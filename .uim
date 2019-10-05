@@ -1,0 +1,57 @@
+;; vim: ft=scheme
+(require-module "byeoru")
+
+;; 원래 있던 자판을 덮어쓰는 방식으로 작동하기 때문에
+;; 자판 이름을 현재 uim-byeoru가 내장하고 있는 아무 자판 이름이나 쓰시고
+;; 그 자판으로 설정하시면 모쪼록 될 거 같습니다:
+;;
+;; - byeoru-layout-hangul2
+;; - byeoru-layout-hangul2hanterm
+;; - byeoru-layout-strict3final
+;; - byeoru-layout-generous3final
+;; - byeoru-layout-strict390
+;; - byeoru-layout-generous390
+;; - byeoru-layout-no-shift
+;; - byeoru-layout-romaja
+;;
+;; 느슨한 세벌식 최종을 신세벌 자판으로 바꾸고 싶지 않으시다면 이름을 바꾸세요
+;; 이 자판을 적용할 경우 한글 조합 규칙은 ordered가 되어야 합니다
+(byeoru-define-layout byeoru-layout-generous3final
+
+    ( "q" (jungseong-yae . (1 4)) (jongseong-sios  . (1 4)) )
+    ( "w" (jungseong-ya  . (1 4)) (jongseong-rieul . 3)     )
+    ( "f" (jungseong-ae  . (1 4)) (jongseong-bieub . (3 5)) )
+    ( "p" (jungseong-eo  . (1 4)) (jongseong-tieut . (1 4)) )
+    ( "b" (jungseong-yeo . (1 4)) (jongseong-kieuk . 1)     )
+
+    ( "j" (choseong-rieul   . 1)                            )
+    ( "l" (choseong-digeud  . (3 5))                        )
+    ( "u" (choseong-mieum   . 1)                            )
+    ( "y" (choseong-chieuch . 1) (jungseong-u . 3)          )
+    ( ";" (choseong-pieup   . 1)                            )
+
+    ( "a" (jungseong-yu . (1 4)) (jongseong-ieung  . 1)     )
+    ( "r" (jungseong-ye . (1 4)) (jongseong-nieun  . 3)     )
+    ( "s" (jungseong-i  . (1 4)) (jongseong-hieuh  . (1 4)) )
+    ( "t" (jungseong-a  . (1 4)) (jongseong-pieup  . (1 4)) )
+    ( "g" (jungseong-eu . (1 4)) (jongseong-digeud . 1)     )
+
+    ( "m" (choseong-nieun  . 1)                             )
+    ( "n" (choseong-ieung  . 1)                             )
+    ( "e" (choseong-giyeog . (3 5))                         )
+    ( "i" (choseong-jieuj  . (3 5))                         )
+    ( "o" (choseong-bieub  . (3 5))                         )
+    ( "-" (choseong-tieut  . 1)                             )
+
+    ( "z" (jungseong-ui . (1 4)) (jongseong-mieum     . (1 4))   )
+    ( "x" (jungseong-yo . (1 4)) (jongseong-ssangsios . (3 5))   )
+    ( "c" (jungseong-e  . (1 4)) (jongseong-giyeog    . (3 4 5)) )
+    ( "d" (jungseong-o  . (1 4)) (jongseong-jieuj     . 1)   )
+    ( "v" (jungseong-u  . (1 4)) (jongseong-chieuch   . 1)       )
+
+    ( "k" (choseong-sios  . (3 5))                         )
+    ( "h" (choseong-hieuh . 1)                             )
+
+    ( "/" (choseong-kieuk . 1) (jungseong-o    . 3)        )
+
+)
