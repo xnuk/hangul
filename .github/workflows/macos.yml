@@ -20,7 +20,9 @@ jobs:
           brew install m4 expat gettext intltool libtool automake coreutils pkg-config gnu-sed
           cpan XML::Parser
           brew unlink gettext && brew link --force gettext
-      - name: start a build
+      - name: Start a build
         run: |
           cd libhangul
           PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:$PATH ../libhangul.macos.rb
+      - name: Check all things right
+        run: libhangul/tools/hangul --list
