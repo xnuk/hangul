@@ -10,5 +10,5 @@ jobs:
     runs-on: macOS-latest
 
     steps:
-      - run: echo hi
-        name: hi
+      - name: Install Brew
+        run: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
