@@ -11,7 +11,7 @@ Dir.chdir(`git rev-parse --show-toplevel`.strip) do
   File.write(TOOL_MAKEFILE, "AM_LDFLAGS = -framework CoreFoundation\n#{makefile}")
   File.write('./config.rpath', '') unless File.exist? './config.rpath'
 
-  system('./autogen.sh')
-  system({'USE_NLS' => USE_NLS, 'PKG_CONFIG_PATH' => PKG_CONFIG_PATH}, './configure')
-  system({'USE_NLS' => USE_NLS}, 'make')
+  abort unless system('./autogen.sh')
+  abort unless system({'USE_NLS' => USE_NLS, 'PKG_CONFIG_PATH' => PKG_CONFIG_PATH}, './configure')
+  abort unless system({'USE_NLS' => USE_NLS}, 'make')
 end
