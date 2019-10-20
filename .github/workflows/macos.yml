@@ -1,0 +1,11 @@
+name: MacOS sucks
+
+on:
+  push:
+    branches:
+      - libhangul
+
+jobs:
+  build:
+    runs-on: macos-latest
+
