@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Install Brew
         run: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+      - name: Install required packages
+        run: brew install m4 expat gettext intltool libtool
       - name: Clone a fresh libhangul
         run: git clone https://github.com/libhangul/libhangul
       - name: start a build
