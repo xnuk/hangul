@@ -17,8 +17,8 @@ jobs:
         run: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       - name: Install required packages
         run: |
-          brew install m4 expat gettext intltool libtool automake & cpan XML::Parser
-          wait
+          brew install m4 expat gettext intltool libtool automake coreutils
+          cpan XML::Parser
           brew unlink gettext && brew link --force gettext
       - name: start a build
         run: |
