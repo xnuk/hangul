@@ -4,8 +4,6 @@ USE_NLS = 'no'
 LTLIBINTL = '/usr/local/lib/libintl.a'
 TOOL_MAKEFILE = './tools/Makefile.am'
 
-system('brew install m4 expat gettext intltool libtool')
-
 abort "#{LTLIBINTL} is not found" unless File.exist? LTLIBINTL
 
 Dir.chdir(`git rev-parse --show-toplevel`.strip) do

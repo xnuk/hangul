@@ -20,7 +20,4 @@ jobs:
       - name: start a build
         run: |
           cd libhangul
-          touch config.rpath
-          ./autogen.sh
-          ./configure
-          make
+          ../libhangul.macos.rb
