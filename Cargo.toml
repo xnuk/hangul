@@ -5,4 +5,4 @@ authors = ["Xnuk Shuman <admin@xnu.kr>"]
 edition = "2018"
 
 [dependencies]
-hangeul = "^0.2.0"
+hangeul = "0.2.0"
