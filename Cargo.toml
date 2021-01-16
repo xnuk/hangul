@@ -1,5 +1,5 @@
 [package]
-name = "hip"
+name = "prostate"
 version = "0.1.0"
 authors = ["Xnuk Shuman <admin@xnu.kr>"]
 edition = "2018"
